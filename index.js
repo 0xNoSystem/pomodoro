@@ -34,12 +34,9 @@ async function updateCount(myCount) {
     
     console.log('saved with success');
     
-} finally {
-    
-    // Ensures that the client will close when you finish/error
-    await client.close();
-   
-  }
+  }catch(e){
+  console.log(e.message)
+  } 
 }
 
 async function getCount(){
@@ -54,11 +51,8 @@ async function getCount(){
     console.log('count retrieved with success');
     return count.count;
     
-} finally {
-    
-    // Ensures that the client will close when you finish/error
-    await client.close();
-   
+  }catch(e){
+    console.log(e.message);
   }
 }
 
