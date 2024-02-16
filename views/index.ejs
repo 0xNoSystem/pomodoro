@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <main>
+        <div>
+            <h1>POMODORO</h1>
+        </div>
+        <div class="counter">
+            <h3>
+                Count : <span id="count"><%=count%></span>
+            </h3>
+            <button title="save"  id="add" type="button">OKEY</button>
+            <form method="post" action="/csave" id="save">
+                <input type="hidden" name="count" value="<%=count%>" id="inputSave">
+            </form>
+            <button id="noy">Noy</button>
+        </div>
+        
+            <svg id="floppy" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"  class="bi bi-floppy-fill" viewBox="0 0 16 16">
+            <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0H3v5.5A1.5 1.5 0 0 0 4.5 7h7A1.5 1.5 0 0 0 13 5.5V0h.086a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5H14v-5.5A1.5 1.5 0 0 0 12.5 9h-9A1.5 1.5 0 0 0 2 10.5V16h-.5A1.5 1.5 0 0 1 0 14.5z"/>
+            <path d="M3 16h10v-5.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5zm9-16H4v5.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5zM9 1h2v4H9z"/>
+            </svg>  
+         
+    </main>
+    <script>
+    
+        const saveForm = document.getElementById('save');
+        let count = document.getElementById('inputSave').value;
+        const addButton =  document.getElementById('add');
+        addButton.addEventListener('click', function(){
+            count++;
+            document.getElementById('count').innerText = count;
+            document.getElementById('inputSave').value = count;
+            
+        })
+
+        const noyButton = document.getElementById('noy');
+        noyButton.addEventListener('click', function(){
+            count--;
+            document.getElementById('count').innerText = count;
+            document.getElementById('inputSave').value = count;
+        } )
+
+        const floppy = document.getElementById('floppy');
+        floppy.addEventListener('mouseover', function(){
+            floppy.setAttribute('fill', 'green');
+        })
+
+        floppy.addEventListener('mouseleave', function(){
+            floppy.setAttribute('fill', 'white');
+
+        });
+
+        floppy.addEventListener('click',function(){
+            saveForm.submit();
+        })
+
+        
+        
+    </script>
+</body>
+
+</html>

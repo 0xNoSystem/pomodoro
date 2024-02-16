@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    letter-spacing: 3px;
+}
+
+
+main{
+    height: 100vh;
+    background-color: rgb(41, 40, 40);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 4rem;
+    font-family: monospace;
+}
+
+button{
+    background-color: beige;
+    padding: 5px;
+    font-weight: 500;
+}
+
+.counter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scale: 1.2;
+    font-family:monospace
+}
+
+
+#noy{
+    background-color: yellow;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+svg{
+    position: fixed;
+
+}
+
+
+#floppy{
+    cursor: pointer;
+}
+
